@@ -4,7 +4,6 @@
   "type": "module",
   "description": "MERN authentication system",
   "main": "server.js",
-  "proxy": "http://127.0.0.1:5000",
   "scripts": {
     "start": "node server.js"
   },
