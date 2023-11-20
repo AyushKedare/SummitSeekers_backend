@@ -16,7 +16,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({credentials:true,origin:"https://summit-seekers.vercel.app/",optionsSuccessStatus:200}))
+app.use(cors({origin:"*",credentials:true,optionsSuccessStatus:200}))
 
 app.use(cookieParser());
 
