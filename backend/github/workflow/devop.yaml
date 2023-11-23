@@ -1,0 +1,34 @@
+name: Auto Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  auto-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install necessary packages
+        run: npm install
+
+      - name: Testing the project
+        run: npm run test
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v21
+        with:
+          vercel-token: adxJJCIUv9EiJwOHtu2lma8S
